@@ -10,8 +10,8 @@ int b_z = rand.Next(1, 10);
 Console.WriteLine("Точка А - " + a_x + ":" + a_y + ":" + a_z);
 Console.WriteLine("Точка В - " + b_x + ":" + b_y + ":" + b_z);
 
-double distance = Math.Sqrt( 
-    (a_x - b_x)*(a_x - b_x) + (a_y - b_y)*(a_y - b_y) +(a_z - b_z)*(a_z - b_z));
-Console.WriteLine("Длина отрезка: " +distance);
+double distance_x = Math.Pow( (b_x - a_x), 2);
+double distance_y = Math.Pow( (b_y - a_y), 2);
+double distance_z = Math.Pow( (b_z - a_z), 2);
 
-//Math.Pow не получилось решить, всегда пишет ошибу связанную с типом данных double(можете разобрать эту задачу на семинаре, с решением через Pow?)
+Console.WriteLine("Длина отрезка: " +Math.Sqrt(distance_x + distance_y + distance_z));
